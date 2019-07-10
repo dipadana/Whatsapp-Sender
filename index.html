@@ -4,38 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+		<title>Document</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script>
 				$(document).ready(function() {
 			 
 					$("#confirm").click(function() {
 						let nilai = $("#kotak_isian").val();
+						let nilai2 = $("#kotak_isian2").val();
 						$("#target").html(nilai);
 						$('#link').empty().append(`
-							<a id="link1" target="_blank" href=" https://wa.me/${nilai}?text=Saya%20tertarik%20untuk%20membeli%20mobil%20Anda">KIRIM</a>
+							<a href="https://wa.me/${nilai}?text=${nilai2}" target="_blank" id="clear" class="btn btn-success mt-1">Send</a>
 						`)
 					})
 
 					$("#clear").click(function() {
 						$("#kotak_isian").val('');
 						$("#target").empty();
-						
+						$("#link").empty();
 					})
 
-
-					
-			 
 				});
 				</script>
 		 </head>
 </head>
 <body>
-		Input Text: <input type="text" id="kotak_isian">
-		<button id="confirm">Confirm</button>
-		<button id="clear">Clear</button>
-		<p>Nomor Telepon : <span id="target"></span></p> 
-		<div id="link"></div>
-    
+	
+		<div class="container-fluid d-flex align-items-center justify-content-center" style="width: 100vw; height:100vh;">
+			
+					<div class="card text-center">
+						<div class="card-header">
+							WhatsApp Sender
+						</div>
+						<div class="card-body">
+							<div class="input-group mb-3">
+								<div class="input-group-prepend">
+									<span class="input-group-text" id="basic-addon1">☎️</span>
+								</div>
+								<input type="text" id="kotak_isian" class="form-control" placeholder="Phone" aria-label="Username" aria-describedby="basic-addon1">
+							</div>
+							<div class="input-group mb-3">
+								<textarea class="form-control" id="kotak_isian2" rows="7" placeholder="Example : Saya%20tertarik%20untuk%20membeli%20mobil%20Anda" aria-label="With textarea"></textarea>
+							</div>
+							<button id="confirm" class="btn btn-primary">Confirm</button>
+							<button id="clear" class="btn btn-dark">Clear</button>
+							
+							
+							<div id="link"></div>
+						</div>
+						<div class="card-footer text-muted" style="font-size: 12px;">
+							made with ❤️ by Dipadana Putu
+						</div>
+					
+			</div>
+
+					
+
+				
+		</div>
+
 </body>
 </html>
