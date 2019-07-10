@@ -9,13 +9,20 @@
 		<script>
 				$(document).ready(function() {
 			 
-					$("#tombol").click(function() {
+					$("#confirm").click(function() {
 						let nilai = $("#kotak_isian").val();
 						$("#target").html(nilai);
 						$('#link').empty().append(`
-							<a id="link1" target="_blank" href=" https://wa.me/${nilai}?text=Saya%20tertarik%20untuk%20membeli%20mobil%20Anda">Klik</a>
+							<a id="link1" target="_blank" href=" https://wa.me/${nilai}?text=Saya%20tertarik%20untuk%20membeli%20mobil%20Anda">KIRIM</a>
 						`)
 					})
+
+					$("#clear").click(function() {
+						$("#kotak_isian").val('');
+						$("#target").empty();
+						
+					})
+
 
 					
 			 
@@ -25,8 +32,9 @@
 </head>
 <body>
 		Input Text: <input type="text" id="kotak_isian">
-		<button id="tombol">Salin!</button>
-		<p id="target">placeholder...</p>
+		<button id="confirm">Confirm</button>
+		<button id="clear">Clear</button>
+		<p>Nomor Telepon : <span id="target"></span></p> 
 		<div id="link"></div>
     
 </body>
