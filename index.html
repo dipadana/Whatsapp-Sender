@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script>
+				$(document).ready(function() {
+			 
+					$("#tombol").click(function() {
+						let nilai = $("#kotak_isian").val();
+						$("#target").html(nilai);
+						$('#link').empty().append(`
+							<a id="link1" target="_blank" href=" https://wa.me/${nilai}?text=Saya%20tertarik%20untuk%20membeli%20mobil%20Anda">Klik</a>
+						`)
+					})
+
+					
+			 
+				});
+				</script>
+		 </head>
+</head>
+<body>
+		Input Text: <input type="text" id="kotak_isian">
+		<button id="tombol">Salin!</button>
+		<p id="target">placeholder...</p>
+		<div id="link"></div>
+    
+</body>
+</html>
