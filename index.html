@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-		<title>Document</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script>
-				$(document).ready(function() {
-					$("#confirm").click(function() {
-						let nilai = $("#kotak_isian").val();
-						let nilai2 = $("#kotak_isian2").val();
-						$("#target").html(nilai);
-						$('#link').show().empty().append(`
-							<a href="https://wa.me/${nilai}?text=${nilai2}" target="_blank" id="clear" class="text-white">Send</a>
-						`)
-						$('#confirm').attr('disabled','')
-					})
-					$("#clear").click(function() {
-						$("#kotak_isian").val('');
-						$("#target").empty();
-						$("#link").hide();
-						$('#confirm').removeAttr("disabled")
-					})
-				});
-				</script>
-		 </head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#confirm").click(function() {
+				let nilai = $("#kotak_isian").val();
+				let nilai2 = $("#kotak_isian2").val();
+				let url = encodeURI(nilai2);
+				$('#target').html(nilai);
+				$('#link').show().empty().append(`
+					<a href="https://wa.me/${nilai}?text=${url}" target="_blank" id="clear" class="text-white">Send</a>
+				`)
+			})
+			$("#clear").click(function() {
+				$("#kotak_isian").val('');
+				$("#target").empty();
+				$("#link").hide();
+				$('#confirm').removeAttr("disabled")
+			})
+		});
+	</script>
 </head>
 <body>
-		<div class="container-fluid d-flex align-items-center justify-content-center" style="width: 100vw; height:100vh;">
+	<div class="container-fluid position-absolute d-table" style="width: 100%; height:100%;">
+		<div class="container" style="display: table-cell; text-align: center; vertical-align: middle;">
 			<div class="card text-center">
-				<div class="card-header">
+				<div class="card-header h5">
 					WhatsApp Sender
 				</div>
 				<div class="card-body">
@@ -39,26 +39,24 @@
 						<div class="input-group-prepend">
 							<span class="input-group-text" id="basic-addon1">☎️</span>
 						</div>
-						<input type="text" id="kotak_isian" class="form-control" placeholder="ex:6282144686462" aria-label="Username" aria-describedby="basic-addon1">
+						<input type="tel" id="kotak_isian" class="form-control" placeholder="ex : 6282144686462" aria-label="Username" aria-describedby="basic-addon1">
 					</div>
 					<div class="input-group mb-3">
-						<textarea class="form-control" id="kotak_isian2" rows="7" placeholder="Example : Saya%20tertarik%20untuk%20membeli%20mobil%20Anda" aria-label="With textarea">Halo,%20kami%20dari%20tim%20GDG%20Bali%20hanya%20ingin%20mengingatkan%20kamu%20untuk%20hadir%20di%20acara%20Google%20I/O%20Extended%20Bali%202019%20%22Road%20to%202.0%22%20pada%20har%20Minggu,%2014%20Juli%202019,%20jam%209.00%20pagi,%20bertempat%20di%20Aula%20Lantai%204%20STMIK%20Primakra%20Denpasar.%20Diacara%20tersebut%20kamu%20akan%20mendapatkan%20berbagai%20informasi%20menarik%20dan%20terbaru%20seputar%20dunia%20web%20dan%20android%20programming.%20Serta%20tidak%20lupa%20juga%20akan%20ada%20User%20Group%20Session,%20dimana%20kamu%20bisa%20bertanya%20tentang%20kendala%20ataupun%20masalah%20yang%20kamu%20hadapi%20selama%20proses%20development%20project%20kalian%20masing-masing.%20Jadi,%20jangan%20lewatkan%20kesempatan%20ini%20dan%20kami%20tunggu%20kehadiranmu%20😉</textarea>
+						<textarea class="form-control" id="kotak_isian2" rows="7" placeholder="Text here..." aria-label="With textarea"></textarea>
 					</div>
-					<p>Nomor : <span id="target"></span></p> 
+					<p>Nomor tertuju : <b id="target"></b></p> 
 					<button id="confirm" class="btn btn-sm btn-primary">Confirm</button>
-					<button id="clear" class="btn btn-sm btn-dark">Clear</button>
+					<button id="clear" class="btn btn-sm btn-dark">Clear Number</button>
 					<button id="link" class="btn btn-sm btn-success" style="display: none;"></button>
 				</div>
 				<div class="card-footer text-muted" style="font-size: 12px;">
-					<p class="text-center mt-2">Note : <br>
-						Confirm = Untuk mengkonfirmasi nomor tujuan <br>
-						Clear = Untuk me'reset' field
+					<p class="text-center mt-2"> <b>NOTE :</b> <br>
+						"Confirm" <b>Wajib diklik sebelum mengirim.</b> Untuk mengkonfirmasi nomor tujuan
 					</p>
 					<p class="font-weight-lighter">made with ❤️ by Dipadana Putu</p> 
 				</div>
-			</div>
-			
+			</div>	
 		</div>
-		
+	</div>
 </body>
 </html>
