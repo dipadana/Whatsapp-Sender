@@ -13,11 +13,11 @@ var reseiverNumber = document.getElementById('receiver-number');
 generateBtn.addEventListener('click', function(){
   // Mengenerate API dari WA
   if(telephone.value && text.value){
-    sendBtn.setAttribute('href',`https://wa.me/${telephone.value}?text=${encodeURI(text.value)}`);
+    sendBtn.setAttribute('href',`https://wa.me/62${telephone.value}?text=${encodeURI(text.value)}`);
     sendBtn.removeAttribute('style','display: none');
   }
   // Mengenerate nomor tertuju
-  reseiverNumber.innerHTML = telephone.value;
+  reseiverNumber.innerHTML = '62' + telephone.value;
   console.log(sendBtn);
 
   var tempTelephone = telephone.value;
@@ -30,6 +30,7 @@ generateBtn.addEventListener('click', function(){
 telephone.addEventListener('input', function(){
   sendBtn.removeAttribute('href');
   sendBtn.setAttribute('style','display: none');
+  reseiverNumber.innerHTML = '';
 })
 text.addEventListener('input', function(){
   sendBtn.removeAttribute('href');
@@ -42,8 +43,13 @@ text.addEventListener('input', function(){
 clearBtn.addEventListener('click', function(){
   telephone.value = '';
   text.value = '';
-  reseiverNumber.innerHTML = 'No Telephone = ';
+  reseiverNumber.innerHTML = '';
   sendBtn.removeAttribute('href');
   sendBtn.setAttribute('style','display: none');
 })
 
+// Untuk menga
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
