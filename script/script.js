@@ -13,12 +13,27 @@ var reseiverNumber = document.getElementById('receiver-number');
 generateBtn.addEventListener('click', function(){
   // Mengenerate API dari WA
   if(telephone.value && text.value){
-    sendBtn.setAttribute('href',`https://wa.me/${telephone.value}?text=${text.value}`);
+    sendBtn.setAttribute('href',`https://wa.me/${telephone.value}?text=${encodeURI(text.value)}`);
     sendBtn.removeAttribute('style','display: none');
   }
   // Mengenerate nomor tertuju
   reseiverNumber.innerHTML = 'No Telephone = ' + telephone.value;
   console.log(sendBtn);
+
+  var tempTelephone = telephone.value;
+  var tempText = text.value;
+  console.log(tempTelephone, tempText);
+})
+
+// Ketika ada perubahan pada HTMLInputElementObject,
+// maka akan otomatis menghaus tombol send
+telephone.addEventListener('input', function(){
+  sendBtn.removeAttribute('href');
+  sendBtn.setAttribute('style','display: none');
+})
+text.addEventListener('input', function(){
+  sendBtn.removeAttribute('href');
+  sendBtn.setAttribute('style','display: none');
 })
 
 // Ketika tombol clear di click, maka akan otomatis menghapus field dari
