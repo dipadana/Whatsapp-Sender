@@ -16,12 +16,14 @@ generateBtn.addEventListener('click', function(){
     sendBtn.setAttribute('href',`https://wa.me/${telephone.value}?text=${text.value}`);
     sendBtn.removeAttribute('style','display: none');
   }
-
   // Mengenerate nomor tertuju
   reseiverNumber.innerHTML = 'No Telephone = ' + telephone.value;
   console.log(sendBtn);
 })
 
+// Ketika tombol clear di click, maka akan otomatis menghapus field dari
+// nomor telephone, text, dan receive number. Sekaligus juga menghapus atribut
+// href dan tombol send
 clearBtn.addEventListener('click', function(){
   telephone.value = '';
   text.value = '';
