@@ -1,37 +1,64 @@
 <!DOCTYPE html>
-<html lang=id>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="/style/style.css">
-  <title>Whatsapp Sender</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Whatsapp Sender</title>
   <!-- Icon untuk website WA Sender -->
   <link rel="icon" href="image/tick.png" type = "image/x-icon">
   <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-  <!-- Bagian untuk nomor telepohone -->
-  <p>No :</p>
-  <input id="phone-number" type="text" name="phone-number">
+	<div class="container-fluid position-absolute d-table" style="width: 100%; height:100%;">
+		<div class="container" style="display: table-cell; text-align: center; vertical-align: middle;">
+			<div class="card text-center">
 
-  <!-- Bagian  untuk field text -->
-  <p>Message :</p>
-  <textarea name="text-message" id="text-message" cols="30" rows="10"></textarea>
+				<!-- Bagian untuk header -->
+				<div class="card-header h5">
+					WhatsApp Sender
+				</div>
 
-  <!-- Bagian untuk nomor tertuju -->
-  <p id="receiver-number">No Telephone = </p>
+				<!-- Bagian untuk body -->
+				<div class="card-body">
+					<!-- Bagian untuk nomor telepon -->
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text" id="basic-addon1">☎️</span>
+						</div>
+						<input type="tel" id="phone-number" class="form-control" placeholder="ex : 6282144686462" aria-label="Username" aria-describedby="basic-addon1">
+					</div>
 
-  <!-- Bagian untuk tombol -->
-  <div>
-    <button id="clear-field">clear</button>
-    <button id="generate-link">generate</button>
-    <a id="send" target="_blank" style="display: none">
-        <button>send</button>
-    </a>
-  </div>
+					<!-- Bagian untuk field text -->
+					<div class="input-group mb-3">
+						<textarea class="form-control" id="text-message" rows="7" placeholder="Text here..." aria-label="With textarea"></textarea>
+					</div>
 
-  <!-- script dari js -->
+					<!-- Bagian untuk nomot tertuju -->
+					<p>Nomor tertuju : <b id="receiver-number"></b></p> 
+
+					<!-- Bagian untuk tombol -->
+					<button id="generate-link" class="btn btn-sm btn-primary">Confirm</button>
+					<button id="clear-field" class="btn btn-sm btn-dark">Clear Number</button>
+					<a id="send" target="_blank" style="display: none">
+						<button class="btn btn-sm btn-success">Send</button>
+					</a>
+
+				</div>
+
+				<!-- Bagian untuk footer -->
+				<div class="card-footer text-muted" style="font-size: 12px;">
+					<p class="text-center mt-2"> <b>NOTE :</b> <br>
+						"Confirm" <b>Wajib diklik sebelum mengirim.</b> Untuk mengkonfirmasi nomor tujuan
+					</p>
+					<p class="font-weight-lighter">made with ❤️ by Dipadana Putu</p> 
+				</div>
+			</div>	
+		</div>
+	</div>
+
+	<!-- script dari js -->
   <script src="/script/script.js"></script>
 </body>
 </html>

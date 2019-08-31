@@ -17,7 +17,7 @@ generateBtn.addEventListener('click', function(){
     sendBtn.removeAttribute('style','display: none');
   }
   // Mengenerate nomor tertuju
-  reseiverNumber.innerHTML = 'No Telephone = ' + telephone.value;
+  reseiverNumber.innerHTML = telephone.value;
   console.log(sendBtn);
 
   var tempTelephone = telephone.value;

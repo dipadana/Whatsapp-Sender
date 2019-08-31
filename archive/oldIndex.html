@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang=id>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/style/style.css">
+  <title>Whatsapp Sender</title>
+  <!-- Icon untuk website WA Sender -->
+  <link rel="icon" href="image/tick.png" type = "image/x-icon">
+  <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> -->
+</head>
+<body>
+  <!-- Bagian untuk nomor telepohone -->
+  <p>No :</p>
+  <input id="phone-number" type="text" name="phone-number">
+
+  <!-- Bagian  untuk field text -->
+  <p>Message :</p>
+  <textarea name="text-message" id="text-message" cols="30" rows="10"></textarea>
+
+  <!-- Bagian untuk nomor tertuju -->
+  <p id="receiver-number">No Telephone = </p>
+
+  <!-- Bagian untuk tombol -->
+  <div>
+    <button id="clear-field">clear</button>
+    <button id="generate-link">generate</button>
+    <a id="send" target="_blank" style="display: none">
+        <button>send</button>
+    </a>
+  </div>
+
+  <!-- script dari js -->
+  <script src="/script/script.js"></script>
+</body>
+</html>
