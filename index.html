@@ -8,14 +8,15 @@
   <title>Whatsapp Sender</title>
 </head>
 <body>
-  <p>NO :</p>
+  <p>No :</p>
   <input id="phone-number" type="text" name="phone-number">
   <p>Message :</p>
   <textarea name="text-message" id="text-message" cols="30" rows="10"></textarea>
+  <p id="receiver-number">No Telephone = </p>
   <div>
-    <p id="receiver-number">No Telephone = </p>
+    <button id="clear-field">clear</button>
     <button id="generate-link">generate</button>
-    <a id="send" target="_blank">
+    <a id="send" target="_blank" style="display: none">
         <button>send</button>
     </a>
   </div>
